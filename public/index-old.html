@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VVC Chat Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #faf9f7;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .demo-page {
+      text-align: center;
+      padding: 40px;
+      max-width: 500px;
+    }
+    .demo-page h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .demo-page p { font-size: 16px; color: #666; line-height: 1.6; }
+    .demo-page .arrow {
+      font-size: 32px;
+      margin-top: 24px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ===== CHAT WIDGET — COPY FROM HERE TO ADD TO YOUR REAL SITE ===== */
+
+    #chat-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, background 0.2s ease;
+      z-index: 1000;
+    }
+    #chat-toggle:hover { transform: scale(1.08); background: #333; }
+
+    #chat-window {
+      position: fixed;
+      bottom: 96px;
+      right: 24px;
+      width: 380px;
+      max-height: 520px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      border: 1px solid #e8e6e3;
+      animation: slideUp 0.25s ease-out;
+    }
+    #chat-window.open { display: flex; }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+    .chat-header span {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.6;
+      margin-top: 2px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 340px;
+    }
+
+    .msg {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+    .msg.user {
+      align-self: flex-end;
+      background: #1a1a1a;
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    .msg.assistant {
+      align-self: flex-start;
+      background: #f2f0ed;
+      color: #1a1a1a;
+      border-bottom-left-radius: 4px;
+    }
+    .msg.typing {
+      align-self: flex-start;
+      background: #f2f0ed;
+      color: #999;
+      font-style: italic;
+    }
+
+    .chat-input-area {
+      padding: 12px 16px;
+      border-top: 1px solid #e8e6e3;
+      display: flex;
+      gap: 8px;
+    }
+    .chat-input-area input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #e0ddd9;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .chat-input-area input:focus { border-color: #1a1a1a; }
+    .chat-input-area button {
+      padding: 10px 18px;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .chat-input-area button:hover { background: #333; }
+    .chat-input-area button:disabled { background: #ccc; cursor: not-allowed; }
+
+    @media (max-width: 440px) {
+      #chat-window {
+        width: calc(100vw - 32px);
+        right: 16px;
+        bottom: 88px;
+        max-height: 70vh;
+      }
+    }
+
+    /* ===== END CHAT WIDGET STYLES ===== */
+  </style>
+</head>
+<body>
+
+  <!-- Demo page (replace with your real VVC site) -->
+  <div class="demo-page">
+    <h1>Velvet Vision Creative</h1>
+    <p>This is a test page for your AI chat agent.<br>Click the chat bubble in the bottom-right corner.</p>
+    <div class="arrow">&#8600;</div>
+  </div>
+
+  <!-- ===== CHAT WIDGET — COPY FROM HERE ===== -->
+
+  <button id="chat-toggle" aria-label="Open chat">&#128172;</button>
+
+  <div id="chat-window">
+    <div class="chat-header">
+      Velvet Vision Creative
+      <span>AI Assistant</span>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg assistant">Hey! Welcome to Velvet Vision Creative. I can help you learn about our services, how we work, or anything else about VVC. What can I help you with?</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Ask about our services..." autocomplete="off" />
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // =============================================
+    // CHANGE THIS URL WHEN YOU DEPLOY
+    // =============================================
+    const API_URL = 'http://localhost:3001/api/chat';
+
+    let conversationHistory = [];
+
+    const toggle = document.getElementById('chat-toggle');
+    const chatWindow = document.getElementById('chat-window');
+    const messagesDiv = document.getElementById('chat-messages');
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('chat-send');
+
+    toggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('open');
+      if (chatWindow.classList.contains('open')) input.focus();
+    });
+
+    function addMessage(text, role) {
+      const div = document.createElement('div');
+      div.className = `msg ${role}`;
+      div.textContent = text;
+      messagesDiv.appendChild(div);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function showTyping() {
+      const div = document.createElement('div');
+      div.className = 'msg typing';
+      div.id = 'typing-indicator';
+      div.textContent = 'Thinking...';
+      messagesDiv.appendChild(div);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function hideTyping() {
+      const el = document.getElementById('typing-indicator');
+      if (el) el.remove();
+    }
+
+    async function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+
+      addMessage(text, 'user');
+      input.value = '';
+      sendBtn.disabled = true;
+      showTyping();
+
+      conversationHistory.push({ role: 'user', content: text });
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: text,
+            history: conversationHistory.slice(0, -1),
+          }),
+        });
+
+        const data = await response.json();
+        if (data.error) throw new Error(data.error);
+
+        hideTyping();
+        addMessage(data.response, 'assistant');
+        conversationHistory.push({ role: 'assistant', content: data.response });
+
+      } catch (error) {
+        hideTyping();
+        addMessage("Sorry, I'm having trouble right now. Please try again in a moment!", 'assistant');
+        console.error('Chat error:', error);
+      }
+
+      sendBtn.disabled = false;
+      input.focus();
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+  </script>
+
+  <!-- ===== END CHAT WIDGET ===== -->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2026-03-25T01:32:12.131Z",
+    "visitor": "\"What services do you offer?\"",
+    "agent": "Hey! We offer a pretty full range of services depending on what you're building. Our core work is brand identity and design, AI tool development and integration, website design and development, content strategy, and digital strategy consulting.\n\nA lot of our clients come in wanting one specific thing like a logo or a website, and others want us to build a whole system that includes their brand, their digital presence, and AI automation to actually run parts of their business. We're flexible on scope and can work within your budget.\n\nWhat's drawing you to exploring VVC right now? Are you looking to build something specific, or just exploring what's possible?",
+    "intent": "SERVICES"
+  },
+  {
+    "timestamp": "2026-03-25T01:32:22.129Z",
+    "visitor": "\"How does your process work?\"",
+    "agent": "Great question. We keep it straightforward and collaborative.\n\nFirst, we schedule a free 30-minute discovery call where we learn about your brand, goals, and what's actually keeping you up at night. We'll give you an honest assessment of what you need and where AI tools could genuinely help. Within 48 hours, you get a custom proposal with clear deliverables, timeline, and pricing—no surprises or hidden fees.\n\nFrom there, we work in 2-week sprints with regular check-ins. You get direct access to Tiffany (no layers of project managers in between), and everything we build comes with documentation so you actually understand how it works and can maintain it yourself. When we're done, you get 30 days of support included, plus the option to work with us ongoing if you want.\n\nTypical timelines are 3-4 weeks for brand identity, 4-6 weeks for a website, and 2-4 weeks for AI integration—but that really depends on what you're building.\n\nDoes that sound like the kind of process you're looking for?",
+    "intent": "PROCESS"
+  },
+  {
+    "timestamp": "2026-03-25T01:32:31.139Z",
+    "visitor": "\"Do you work with clients outside St. Louis?\"",
+    "agent": "Absolutely, yes. We're based in St. Louis, but we serve clients nationally. All of our work can be done remotely, so location isn't a barrier at all.\n\nAre you based outside Missouri, or just curious?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:00.062Z",
+    "visitor": "hi",
+    "agent": "Hey there! Welcome to Velvet Vision Creative. How can I help you today? Are you exploring services, curious about how we work, or just getting a feel for what we do?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:01.894Z",
+    "visitor": "hi",
+    "agent": "Hey! I'm here to help. What brings you by today? Feel free to ask me anything about VVC—our services, how we work, or anything else on your mind.",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:03.298Z",
+    "visitor": "hi",
+    "agent": "Hey! I'm all ears. What can I help you with?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:08.831Z",
+    "visitor": "hi",
+    "agent": "Hi there! 👋 I'm noticing we might be having a connection hiccup. No worries—what would be most helpful for you right now? Are you interested in learning about our services, how we work, or do you have a specific question about VVC?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:10.256Z",
+    "visitor": "hi",
+    "agent": "Hey! I'm here whenever you're ready. Feel free to ask me anything about Velvet Vision Creative—whether it's about our services, pricing, process, or anything else. What's on your mind?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:13.218Z",
+    "visitor": "hi",
+    "agent": "I'm here and ready to chat whenever you are. What can I help you with today?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:14.705Z",
+    "visitor": "hihihihihihi",
+    "agent": "Ha, I see what's happening here. When you're ready to chat about something real, I'm ready to help. What brought you to VVC today?",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:17.221Z",
+    "visitor": "hi",
+    "agent": "I'm still here! Whenever you've got a genuine question about what we do or how we can help, just let me know. I'm all yours.",
+    "intent": "GENERAL"
+  },
+  {
+    "timestamp": "2026-03-25T01:33:40.872Z",
+    "visitor": "I have a complaint about my last project.\" Check your terminal for a red escalation alert.",
+    "agent": "I'm sorry to hear you've had an issue with your project. That's definitely something that deserves Tiffany's direct attention. I'd love to help get this resolved for you.\n\nThe best way forward is to have a conversation with Tiffany directly so she can understand what happened and make it right. Would you be open to scheduling a call with her? If you share your email, I can have her reach out to you to discuss this.",
+    "intent": "ESCALATE"
+  }
+]

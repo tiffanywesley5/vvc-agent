@@ -1,0 +1,83 @@
+{
+  "totalConversations": 2,
+  "totalMessages": 13,
+  "escalations": 1,
+  "leadsCollected": 0,
+  "intents": {
+    "SERVICES": 2,
+    "PROCESS": 1,
+    "PORTFOLIO": 0,
+    "GENERAL": 9,
+    "ESCALATE": 1
+  },
+  "topQuestions": [
+    {
+      "question": "what services you offer",
+      "timestamp": "2026-03-25T01:27:39.815Z",
+      "intent": "SERVICES"
+    },
+    {
+      "question": "\"What services do you offer?\"",
+      "timestamp": "2026-03-25T01:32:12.131Z",
+      "intent": "SERVICES"
+    },
+    {
+      "question": "\"How does your process work?\"",
+      "timestamp": "2026-03-25T01:32:22.129Z",
+      "intent": "PROCESS"
+    },
+    {
+      "question": "\"Do you work with clients outside St. Louis?\"",
+      "timestamp": "2026-03-25T01:32:31.139Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:00.062Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:01.894Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:03.298Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:08.831Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:10.256Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:13.218Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hihihihihihi",
+      "timestamp": "2026-03-25T01:33:14.705Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "hi",
+      "timestamp": "2026-03-25T01:33:17.221Z",
+      "intent": "GENERAL"
+    },
+    {
+      "question": "I have a complaint about my last project.\" Check your terminal for a red escalation alert.",
+      "timestamp": "2026-03-25T01:33:40.872Z",
+      "intent": "ESCALATE"
+    }
+  ],
+  "dailyActivity": {
+    "2026-03-25": 13
+  }
+}

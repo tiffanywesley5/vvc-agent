@@ -1,0 +1,42 @@
+VELVET VISION CREATIVE — SERVICES
+
+Velvet Vision Creative (VVC) is an AI-forward creative studio
+specializing in brand identity, AI tool development, and digital
+strategy for founders, small businesses, and creative professionals.
+
+IMPORTANT: Replace this entire file with YOUR real services and
+YOUR real pricing before launching.
+
+CORE SERVICES:
+
+1. Brand Identity & Design
+   What's included: Logo design, visual identity systems,
+   brand guidelines, style guides, color palette, typography
+   Price range: Starting at $1,500 for a core identity package
+
+2. AI Tool Development & Integration
+   What's included: Custom AI agent development, workflow
+   automation (Notion, Zapier, Buffer), AI chatbot development,
+   AI-powered content generation systems
+   Price range: Starting at $2,500 for a basic AI integration
+
+3. Website Design & Development
+   What's included: Custom responsive design, React/Next.js
+   web applications, e-commerce setup, maintenance and updates
+   Price range: Starting at $2,000 for a standard site
+
+4. Content Strategy & Creation
+   What's included: Social media content calendars, blog and
+   newsletter strategy, AI-assisted content workflows
+   Price range: Starting at $800/month for ongoing content
+
+5. Digital Strategy & Consulting
+   What's included: AI readiness assessments, tech stack
+   evaluation, digital transformation roadmapping, 1:1 consulting
+   Price range: $150/hour for consulting
+
+WHAT WE DO NOT DO:
+- Taxes or accounting
+- Legal advice
+- Print-only design (we focus on digital)
+- Social media management without strategy
